@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    position: relative;
+    user-select: none;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Concert One', cursive;
+    margin: 20px;
+}
+
+.txt-sm {
+    font-size: 0.7rem;
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
+    width: 300px;
+    padding: 20px 30px;
+    background: #FFCC68;
+    color: #333;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.btn:hover {
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+li {
+    list-style: none;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+li:hover {
+    color: #fff;
+    background: #333;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+    opacity: 0.6;
+}
+
+.display {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #000;
+    width: 700px;    
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    box-shadow: 5px 5px 4px #333;
+    font-size: 1rem;
+    opacity: 0.65;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-weight: 300;
+}
+
+.display:hover {
+    opacity: 0.9;
+}
+
+.author {
+    margin-left: auto;
+    font-weight: 800;
+    margin-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.5;
+}
+
+ /* Media Queries for Mobile and Small Screens */
+@media (max-width: 768px) {
+    .display {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #author {
+        margin-left: 0;
+    }
+}
+@media(max-width: 468px) {
+    footer {
+        font-size: 0.5rem;
+    }
+
+    .social-icons {
+        display: grid;
+        grid-gap: 3px;
+        font-size: 10px;
+    }
+
+    .grid-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+  
