@@ -170,6 +170,10 @@ const quotes = [
         author: "Winston Churchill"
       },
       {
+        quote: "Follow your dreams.  They know the way.",
+        author: "Kobi Yamada"
+      },
+      {
         quote: "The desert would cover the entire world if it was sunny every day. We need the rain and the snow for plants and delicious fruits to grow.",
         author: "Seo Dal-mi"
       },
