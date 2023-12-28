@@ -19,7 +19,7 @@ body {
 
 .navbar {
     background: linear-gradient(to right, rgba(125, 125, 125, 0.9), rgba(255, 255, 255, 0.7));
-    height: 70px;
+    height: 100px;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@ body {
 }
 
 .nav-logo {
-    width: 200px;
+  height: 130px;
 }
 
 .about {
