@@ -263,6 +263,9 @@ footer a:hover {
 
  /* Media Queries for Mobile and Small Screens */
 @media (max-width: 768px) {
+    .grid-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .display {
         width: 95%;
         margin: auto;
