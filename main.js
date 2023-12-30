@@ -1,6 +1,20 @@
 import quotes from "./quotes.js";
 
-const discord = document.getElementById("discord-el")
+document.addEventListener('DOMContentLoaded', function () {
+  const footerSocals = document.querySelectorAll('.footer-socal');
+
+  footerSocals.forEach((socal) => {
+      const hiddenElement = socal.querySelector('.hidden');
+
+      socal.addEventListener('mouseenter', () => {
+          hiddenElement.style.display = 'block';
+      });
+
+      socal.addEventListener('mouseleave', () => {
+          hiddenElement.style.display = 'none';
+      });
+  });
+});
 
 const authorEl = document.getElementById("author")
 const quoteEl = document.getElementById("quote")
