@@ -1,20 +1,20 @@
 import quotes from "./quotes.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-  const footerSocals = document.querySelectorAll('.footer-socal');
+  const footerSocals = document.querySelectorAll('.footer-socal')
 
   footerSocals.forEach((socal) => {
-      const hiddenElement = socal.querySelector('.hidden');
+      const hiddenElement = socal.querySelector('.hidden')
 
       socal.addEventListener('mouseenter', () => {
-          hiddenElement.style.display = 'block';
-      });
+          hiddenElement.style.display = 'block'
+      })
 
       socal.addEventListener('mouseleave', () => {
-          hiddenElement.style.display = 'none';
-      });
-  });
-});
+          hiddenElement.style.display = 'none'
+      })
+  })
+})
 
 const authorEl = document.getElementById("author")
 const quoteEl = document.getElementById("quote")
