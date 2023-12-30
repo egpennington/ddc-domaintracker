@@ -171,7 +171,7 @@ li:hover {
     font-family: var(--secondary-family);
     background: #fff;
     color: #000;
-    width: 600px;    
+    width: 600px;   
     margin: auto;
     padding: 30px;
     border-radius: 5px;
@@ -220,6 +220,7 @@ li:hover {
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -231,20 +232,40 @@ footer p {
     margin-right: 10px;
 }
 
-footer a {
+.hidden { display: none; }
+
+footer .social {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--alt-family);
+}
+
+footer .social a {
     color: #333;
     margin-left: 15px;
     text-decoration: none;
+    font-family: var(--alt-family);
 }
 
 footer a:hover {
-    color: #FFCC68;
+    color: #d2bb8c;
+}
+
+.footer-socal:hover .hidden {
+    display: block;
+}
+
+.footer-socal:hover i {
+    display: none;
 }
 
  /* Media Queries for Mobile and Small Screens */
 @media (max-width: 768px) {
     .display {
-        width: 90%;
+        width: 95%;
+        margin: auto;
         padding: 20px;
     }
 
@@ -255,20 +276,6 @@ footer a:hover {
 @media(max-width: 468px) {
     footer {
         font-size: 0.5rem;
-    }
-
-    footer p {
-        display: none;
-    }
-
-    .social-icons {
-        display: grid;
-        grid-gap: 3px;
-        font-size: 10px;
-    }
-
-    .grid-items {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .display {

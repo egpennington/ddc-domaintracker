@@ -1,5 +1,7 @@
 import quotes from "./quotes.js";
 
+const discord = document.getElementById("discord-el")
+
 const authorEl = document.getElementById("author")
 const quoteEl = document.getElementById("quote")
 const aboutEl = document.getElementById("about-el")
