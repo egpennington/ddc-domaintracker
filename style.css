@@ -212,6 +212,10 @@ li:hover {
     opacity: 0.7;
 }
 
+.logo-bottom {
+    margin-top: 10px;
+}
+
 .footer {
     background-color: #333;
     color: #333;
