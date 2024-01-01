@@ -29,6 +29,10 @@ body {
     position: relative;
 }
 
+.navbar:hover {
+    opacity: 0.7;;
+}
+
 .nav-logo {
     height: 100px;
     width: 100%;
