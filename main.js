@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Check if today is Saturday
-  const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const today = 6; // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
   const valorItem = document.querySelector(".valor");
 
   if (valorItem) { // Ensure the element exists
