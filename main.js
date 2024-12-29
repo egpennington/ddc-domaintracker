@@ -1,6 +1,43 @@
 import quotes from "./quotes.js";
 
 document.addEventListener('DOMContentLoaded', function () {
+  const collapsible = document.querySelector(".collapsible");
+  const content = document.querySelector(".collapsible-content");
+
+  const buttons = document.querySelectorAll(".toggle-instructions");
+    const overlay = document.getElementById("instructions-overlay");
+    const closeButtons = document.querySelectorAll(".close-instructions");
+    const instructions = document.querySelectorAll(".instructions-content");
+
+    // Show specific instructions on button click
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const targetId = button.getAttribute("data-target") + "-instructions";
+            const targetEl = document.getElementById(targetId);
+
+            // Hide all instructions first
+            instructions.forEach(el => el.style.display = "none");
+
+            // Show overlay and the targeted instructions
+            overlay.style.display = "flex";
+            targetEl.style.display = "block";
+        });
+    });
+
+    // Close instructions on close button click
+    closeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            overlay.style.display = "none";
+        });
+    });
+
+    // Close overlay if user clicks outside the content box
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = "none";
+        }
+    });
+
   const footerSocals = document.querySelectorAll('.footer-socal')
 
   footerSocals.forEach((socal) => {

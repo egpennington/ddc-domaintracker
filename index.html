@@ -27,14 +27,46 @@
             <a href="#" id="about-el" class="about">About</a>
             </a>
         </nav>
-        <div class="about-modal" id="about-modal-el">
+        <div class="about-modal" id="about-modal-el"> 
             <i class="fa-regular fa-rectangle-xmark fa-xl about-close" id="about-close-el"></i>
             <h2>Streamline your daily tracking experience:</h2>
             <ul class="modal-inner">
                 <li>Click on a domain to mark it as completed.</li>
                 <li>Domains reset automatically at 12 a.m. in your local time zone.</li>
+                <li>Valor challenge workouts will appear every Saturday</li>
                 <li>For manual resets, simply double-click the reset button.</li>
-            </ul>                        
+            </ul>
+        
+            <div class="download-section">
+                <h3>Download instructions</h3>
+                <button class="toggle-instructions" data-target="android">📱 Android Directions</button>
+                <button class="toggle-instructions" data-target="iphone">🍎 iPhone Directions</button>
+            </div>
+        
+            <!-- Overlay for instructions -->
+            <div class="instructions-overlay" id="instructions-overlay">
+                <div class="instructions-content" id="android-instructions">
+                    <button class="close-instructions">X Close</button>
+                    <h3>Android Directions:</h3>
+                    <ol>
+                        <li>Open the app website in the browser.</li>
+                        <li>Open the menu (three dots).</li>
+                        <li>Scroll down to "Add to Home screen" and click on it.</li>
+                        <li>Press "Add".</li>
+                    </ol>
+                </div>
+        
+                <div class="instructions-content" id="iphone-instructions">
+                    <button class="close-instructions">Close</button>
+                    <h3>iPhone Directions:</h3>
+                    <ol>
+                        <li>Open the default browser and go to the app website.</li>
+                        <li>Click on the Menu button.</li>
+                        <li>Scroll down to "Add to Home screen" and click on it.</li>
+                        <li>It will ask to add a display name; just click on "Add".</li>
+                    </ol>
+                </div>
+            </div>
         </div>
 
         <p class="txt-med">Stay organized and focused on your goals with ease.</p>
