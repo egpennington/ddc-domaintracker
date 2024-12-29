@@ -21,38 +21,68 @@ const quoteEl = document.getElementById("quote")
 const aboutEl = document.getElementById("about-el")
 
 document.addEventListener("DOMContentLoaded", () => {
-  const domainItems = document.querySelectorAll(".domain")
-  const resetButton = document.querySelector(".btn")
+  const domainItems = document.querySelectorAll(".domain");
+  const resetButton = document.querySelector(".btn");
 
   // Function to reset the completion status
   const resetDomains = () => {
-    localStorage.setItem("lastResetDate", getCurrentDate())
+    localStorage.setItem("lastResetDate", getCurrentDate());
 
     domainItems.forEach((item) => {
-      item.classList.remove("completed")
-      localStorage.removeItem(item.id) // Remove completion status from localStorage
-    })
+      item.classList.remove("completed");
+      localStorage.removeItem(item.id); // Remove completion status from localStorage
+    });
   };
 
   // Function to get the current date in the format YYYY-MM-DD
   const getCurrentDate = () => {
-    const now = new Date()
-    const year = now.getFullYear()
-    const month = String(now.getMonth() + 1).padStart(2, "0")
-    const day = String(now.getDate()).padStart(2, "0")
-    return `${year}-${month}-${day}`
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
+  // Check if today is Saturday
+  const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const valorItem = document.querySelector(".valor");
+
+  if (valorItem) { // Ensure the element exists
+    if (today === 6) { // If today is Saturday
+      valorItem.style.display = "block";
+    } else {
+      valorItem.style.display = "none";
+    }
+  }
+
+  /* ==== Add greeting and today's date ==== */
+  const hours = new Date().getHours();
+  let greeting;
+  if (hours < 12) {
+    greeting = "morning";
+  } else if (hours < 18) {
+    greeting = "afternoon";
+  } else {
+    greeting = "evening";
+  }
+  const greetingEmoji = hours < 12 ? "☀️" : hours < 18 ? "🌤️" : "🌙";
+  document.getElementById('greeting-el').innerText = `Good ${greeting}! ${greetingEmoji}`;
+
+  const dateEl = document.getElementById('date-el');
+  if (dateEl) {
+    dateEl.innerText = new Date().toDateString();
+  }
+
   // Check if the stored date matches the current date
-  const lastResetDate = localStorage.getItem("lastResetDate")
+  const lastResetDate = localStorage.getItem("lastResetDate");
   if (lastResetDate !== getCurrentDate()) {
-    resetDomains()
+    resetDomains();
   } else {
     // Apply completion status from localStorage
     domainItems.forEach((item) => {
-      const completed = localStorage.getItem(item.id) === "true"
+      const completed = localStorage.getItem(item.id) === "true";
       if (completed) {
-        item.classList.add("completed")
+        item.classList.add("completed");
       }
     });
   }
@@ -60,15 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Event listener for domain item clicks
   domainItems.forEach((item) => {
     item.addEventListener("click", () => {
-      item.classList.toggle("completed")
+      item.classList.toggle("completed");
       // Update completion status in localStorage
-      localStorage.setItem(item.id, item.classList.contains("completed"))
-    })
-  })
+      localStorage.setItem(item.id, item.classList.contains("completed"));
+    });
+  });
 
   // Event listener for the reset button
-  resetButton.addEventListener("dblclick", resetDomains);
-})
+  if (resetButton) {
+    resetButton.addEventListener("dblclick", resetDomains);
+  }
+});
+
 
 aboutEl.addEventListener("click", () => {
     const aboutModalEl = document.getElementById("about-modal-el")
@@ -94,3 +127,5 @@ function generateRandomQuote() {
 }
 
 generateRandomQuote()
+
+document.getElementById('footer-el').innerHTML = `&copy; ${new Date().getFullYear()}`
