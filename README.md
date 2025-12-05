@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](\images\desktop screenshot.png)
-![](\images\mobile screenshot.png)
+[desktop] (\images\desktop_screenshot.png)
+[mobile] (\images\mobile_screenshot.png)
 
 
 ### Links
